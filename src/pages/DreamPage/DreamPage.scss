@@ -1,0 +1,43 @@
+
+ul {
+    text-decoration: none;
+    list-style: none;
+   
+}
+.logo {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 5rem;
+}
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    
+}
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.dreamcard {
+    height: 20rem;
+    width: 20rem;
+    border: 1px solid;
+    border-radius: 4px;
+    &__image {
+        height: 70%;
+        width: 100%;
+        object-fit: fill;
+    }
+}
+main {
+    margin: 5rem;
+}
+.dreamcards {
+    display: flex;
+    gap: 2rem;
+}
+.header {
+    display: flex;
+}
