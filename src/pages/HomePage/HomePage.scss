@@ -1,0 +1,48 @@
+
+
+.logo {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 5rem;
+    margin-bottom: 0;
+}
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 0;
+}
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.homecard {
+    height: 10rem;
+    width: 7rem;
+    border: 1px solid;
+    border-radius: 4px;
+    &__image {
+        height: 100%;
+        width: 100%;
+        object-fit: fill;
+    }
+}
+.homepage__main {
+    margin: 0 5rem;
+    display: flex;
+}
+.title {
+    width: 70%;
+    font-size: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+.homecards {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1rem;
+    height: 700px;
+}
