@@ -1,0 +1,37 @@
+.dreamitem {
+    display: flex;
+   align-items: center;
+   justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    &__main {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px;
+    height: 600px;
+    width: 500px; 
+    // background-image: url(../../assets/paris.jpg);
+    // background-size: 100% 50%;
+    // background-repeat: no-repeat;
+    &-image {
+        height: 50%;
+        width: 100%;
+    } 
+    &-cross {
+        height: 1rem;
+    }
+    &-button {
+        position: relative;
+        left: 27rem;
+        bottom: 17rem;
+        width: 3rem;
+    }
+    }
+}
+button {
+    border: none;
+    background-color: transparent;
+}

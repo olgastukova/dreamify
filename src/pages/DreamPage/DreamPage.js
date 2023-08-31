@@ -4,8 +4,14 @@ import guitar from '../../assets/guitar.jpg'
 import letter from '../../assets/letter.jpg'
 import meditate from '../../assets/meditate.jpg'
 import dog from '../../assets/dog.jpg'
+import DreamItem from '../../components/DreamItem/DreamItem';
+import React from 'react';
+import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 const DreamPage = () => {
+    const [show, setShow] = useState(false)
+
     return (
         <section>
             <header>
@@ -29,9 +35,10 @@ const DreamPage = () => {
         </header>
         <main>
             <div className="dreamcards">
-                <section className="dreamcard">
+                <section onClick={() => setShow(true)} className="dreamcard">
                 <img src={paris} className="dreamcard__image" alt="eifell tower" />
                 <h2>Visit Paris</h2>
+                <DreamItem onClose={() => setShow(false)} show={show}/>
             </section>
             <section className="dreamcard">
                 <img src={guitar} className="dreamcard__image" alt="eifell tower" />
