@@ -1,0 +1,49 @@
+.dreamitem {
+    display: flex;
+   align-items: center;
+   justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+    &.show {
+        opacity: 1;
+        pointer-events: visible;
+    }
+}
+    .dreamitem__main {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px;
+    height: 600px;
+    width: 500px; 
+    background-color: white;
+    border-radius: 3px;
+  
+    // background-image: url(../../assets/paris.jpg);
+    // background-size: 100% 50%;
+    // background-repeat: no-repeat;
+    &-image {
+        height: 50%;
+        width: 100%;
+    } 
+    &-cross {
+        height: 1rem;
+    }
+    &-button {
+        position: relative;
+        left: 27rem;
+        bottom: 17rem;
+        width: 3rem;
+    }
+    }
+
+button {
+    border: none;
+    background-color: transparent;
+}
