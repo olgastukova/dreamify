@@ -8,9 +8,11 @@ import DreamItem from '../../components/DreamItem/DreamItem';
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import AddDream from '../../components/AddDream/AddDream'
 
 const DreamPage = () => {
     const [show, setShow] = useState(false)
+    const [showAdd, setShowAdd] = useState(false)
 
     return (
         <section>
@@ -35,9 +37,11 @@ const DreamPage = () => {
         </header>
         <main>
             <div className="dreamcards">
-            <section className="dreamcard">
+            <section onClick={() => setShowAdd(true)} className="dreamcard">
+                 <AddDream onClose={() => setShowAdd(false)} show={showAdd}/> 
                 <h2>Add</h2>
             </section>
+
                 <section onClick={() => setShow(true)} className="dreamcard">
                  <DreamItem onClose={() => setShow(false)} show={show}/>   
                 <img src={paris} className="dreamcard__image" alt="eifell tower" />
