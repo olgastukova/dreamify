@@ -12,7 +12,7 @@ import { DreamItem } from './components/DreamItem/DreamItem';
             <Routes>
               <Route path="/" element={<HomePage/>} />
               <Route path="/dreams" element={<DreamPage/>} />
-              {/* <Route path="/dreams/item" element={<DreamItem/>} /> */}
+              <Route path="/dreams/:id" element={<DreamItem/>} />
             </Routes>
           </BrowserRouter>
           
