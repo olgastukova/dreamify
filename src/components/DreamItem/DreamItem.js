@@ -2,6 +2,7 @@ import './DreamItem.scss'
 import paris from '../../assets/paris.jpg';
 import React from 'react';
 import crossicon from '../../assets/icons/cross icon.jpg'
+import { Link } from 'react-router-dom';
 
 const DreamItem = props => {
    
