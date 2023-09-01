@@ -9,11 +9,26 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import AddDream from '../../components/AddDream/AddDream'
+import axios from 'axios'
 
 const DreamPage = () => {
     const [show, setShow] = useState(false)
     const [showAdd, setShowAdd] = useState(false)
+    const [data, setData] = useState([]);
+    const [isLoading, setLoading] = useState(true)
 
+    const getDreamList = async () => {
+        await axios
+        .get("http://localhost:8080/dreams")
+        .then(response => {
+            setData(response.data)
+            setLoading(false)
+        })
+    }
+    useEffect(()=> {
+        getDreamList();
+    }, [])
+    
     return (
         <section>
             <header>
@@ -26,6 +41,7 @@ const DreamPage = () => {
             </div>
             <div>
                 <ul className ="categories">
+                    <li>all dreams</li>
                     <li>travel</li>
                     <li>experience</li>
                     <li>things</li>
