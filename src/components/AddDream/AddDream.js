@@ -1,33 +1,33 @@
 import './AddDream.scss'
 import React from 'react';
 import crossicon from '../../assets/icons/cross icon.jpg'
+import { useState } from 'react'; 
+import axios from 'axios';
+
 
 const AddDream= props => {
-//     state = {
-//         selectedFile: null
-//     }
-
-//    fileSelectHandler = event => {
-//     this.setState (
-//       selectedFile: event.target.files[0] 
-//     )
-//    }
-
-//    fileUploadHandler = () => {
-
-//    }
-
+   const [image, setImage] = useState("");
+   
+const getImages = () => {
+    axios
+    ("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=rome")
+    .then(res => {
+     image = res.data.urls.regular
+      console.log(res.data.urls.regular)
+    })
+}  
     return (
 <section className={`adddream ${props.show ? 'show' : ''}`} onClick={props.onClose}>
-    <div className="adddream__main" onClick={e => e.stopPropagation()}>
+    <div className="adddream__main" onClick={e => {e.stopPropagation();}}>
     <button className="adddream__main-button" onClick={props.onClose}>
         <img className="adddream__main-cross" src={crossicon} alt="white x" />
     </button>
-    {/* <form className="adddream__main-title">
-        <label for="file">Upload image</label>
-        <input type="file" accept="image/*" name="image" id="file" onChange={this.fileSelectHandler}/>
-        <button onClick={this.fileUploadHandler}>Upload</button>
-    </form> */}
+    <input 
+  type="text"
+  placeholder="Search image"
+  value={image}
+  onChange={(e) => setImage(e.target.value)}
+  /> 
     
     <form className="adddream__main-title">
         <label>Name</label>
@@ -39,7 +39,7 @@ const AddDream= props => {
     </form>
     
     <div className="adddream__buttons">
-        <button>Add a dream</button>
+        <button onClick={getImages}> Add a dream</button>
     </div>
     </div>
 </section>
