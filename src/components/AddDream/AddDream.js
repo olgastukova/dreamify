@@ -34,8 +34,6 @@ const AddDream = ({updateDreamData, categories, onClose, show}) => {
         image: imageResponse,
       })
       .then((res) => {
-        console.log("-----2");
-
         updateDreamData(res.data);
         
       })
@@ -48,7 +46,6 @@ const AddDream = ({updateDreamData, categories, onClose, show}) => {
     <section
       className={`adddream ${show ? "show" : ""}`}
       onClick={onClose}
-    // onClick={props.onClose}
     >
       <div
         className="adddream__main"
@@ -93,10 +90,17 @@ const AddDream = ({updateDreamData, categories, onClose, show}) => {
           value={category}
           onChange={(e) => setCategory(e.target.value)}>
              <option disabled value="">Please select</option>
-                {categories?.map((category) => (
+                {/* {categories?.map((category) => (
                   <option key={category} >{category}</option>
-                ))}
+                ))} */}
                 <option>all dreams</option>
+                <option>travel</option>
+                <option>relationships</option>
+                <option>new skills</option>
+                <option>experience</option>
+                <option>life goals</option>
+                <option>sport</option>
+                <option>shopping</option>
           </select>
         
 

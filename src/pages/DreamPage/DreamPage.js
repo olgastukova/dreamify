@@ -103,23 +103,6 @@ const DreamPage = () => {
                 /* </Link> */
               ))}
 
-
-          <section className="dreamcard">
-                <img src={guitar} className="dreamcard__image" alt="eifell tower" />
-                <h2>Learn to play guitar</h2>
-            </section>
-            <section className="dreamcard">
-                <img src={dog} className="dreamcard__image" alt="eifell tower" />
-                <h2>Get a dog</h2>
-            </section>
-            <section className="dreamcard">
-                <img src={letter} className="dreamcard__image" alt="eifell tower" />
-                <h2>Write a love letter</h2>
-            </section>
-            <section className="dreamcard">
-                <img src={meditate} className="dreamcard__image" alt="eifell tower" />
-                <h2>Try meditation</h2>
-            </section>
         </div>
       </main>
     </section>

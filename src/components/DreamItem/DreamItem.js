@@ -1,13 +1,23 @@
 import './DreamItem.scss'
-
+import axios from 'axios';
 import React from 'react';
 import crossicon from '../../assets/icons/cross icon.jpg'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
-export const DreamItem = ({dreamData, setShow, imageResponse}) => {
+export const DreamItem = ({dreamData, setShow, imageResponse, id}) => {
    
 const onClose = () => {setShow(0)}
 const show = true;
+
+function deleteDream() {
+    axios
+      .delete(`http://localhost:8080/dreams/${id}`)
+      .then((res) => {
+        dreamData();
+        
+      })
+      .catch((err) => console.error(err));
+  }
 
     return (
 <section className={`dreamitem ${show ? 'show' : 'show'}`} onClick={onClose}>
@@ -23,6 +33,7 @@ const show = true;
     <div className="dreamitem__buttons">
         <button>Done</button>
         <button>Fulfill</button>
+        <button onClick={deleteDream}>Delete</button>
     </div>
     </div>
 </section>
