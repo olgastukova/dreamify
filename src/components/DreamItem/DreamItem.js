@@ -2,17 +2,20 @@ import './DreamItem.scss'
 import axios from 'axios';
 import React from 'react';
 import crossicon from '../../assets/icons/cross icon.jpg'
-import ChatBot from '../ChatBot/ChatBot';
+import {ChatBot} from '../ChatBot/ChatBot';
+import { useState } from 'react';
 // import { Link } from 'react-router-dom';
 
 export const DreamItem = ({dreamData, setShow, updateFunc}) => {
-   
+
+const [ai, setAi] = useState(false);
+const [showwChat, setShowChat] = useState(false);
+
 const onClose = () => {setShow(0)}
 const show = true;
 
 function markDone (dreamData) {
     dreamData.isDone = true;
-    console.log("done = " + dreamData.isDone)
     axios
     .put(`http://localhost:8080/dreams/${dreamData.id}`, dreamData)
     .then((res) => {
@@ -48,11 +51,12 @@ function deleteDream(id) {
     
     <div className="dreamitem__buttons">
         <button onClick={() => {markDone(dreamData)}}>Done</button>
-        <button>Fulfill</button>
+        <button onClick={()=>setAi(true)}>Fulfill</button>
         <button onClick={()=>
         {deleteDream(dreamData.id)
         }}>Delete</button>
     </div>
+    {ai == true ? <ChatBot/> :""}
     </div>
 </section>
     )
