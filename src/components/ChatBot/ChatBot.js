@@ -1,4 +1,4 @@
-import './AddDream.scss'
+
 import React from 'react';
 import crossicon from '../../assets/icons/cross icon.jpg'
 

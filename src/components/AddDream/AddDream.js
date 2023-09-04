@@ -5,7 +5,7 @@ import { useState } from "react";
 import axios from "axios";
 import props from "../../pages/DreamPage/DreamPage.js"
 
-const AddDream = ({updateDreamData, categories, onClose, show}) => {
+const AddDream = ({updateDreamData, categories, onClose, show, updateFunc}) => {
   const [dreamName, setDreamName] = useState("");
   const [dreamDesc, setDreamDesc] = useState("");
   const [image, setImage] = useState("");
@@ -25,7 +25,7 @@ const AddDream = ({updateDreamData, categories, onClose, show}) => {
 
   const saveDream = (e) => {
     e.preventDefault();
-// console.log("-----1" + imageResponse);
+
     axios
       .post("http://localhost:8080/dreams", {
         dream_name: dreamName,
@@ -35,7 +35,7 @@ const AddDream = ({updateDreamData, categories, onClose, show}) => {
       })
       .then((res) => {
         updateDreamData(res.data);
-        
+        onClose()
       })
       .catch((error) => {
         console.log(error);

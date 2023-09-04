@@ -16,6 +16,7 @@ const DreamPage = () => {
   const [showAdd, setShowAdd] = useState(false);
   const [dreamData, setDreamData] = useState([]);
   const { id } = useParams();
+  const [isDone, setIsDone] = useState(false);
 
   const getDreamList = () => {
     axios
@@ -52,8 +53,8 @@ const DreamPage = () => {
         <h1 className="logo">Dreamify</h1>
         <div>
           <ul className="nav">
-            <li>To Do</li>
-            <li>Done</li>
+            <li onClick={() => {setIsDone(false)}}>To Do</li>
+            <li onClick={() => {setIsDone(true)}}>Done</li>
           </ul>
         </div>
         <div>
@@ -72,26 +73,25 @@ const DreamPage = () => {
       </header>
       <main>
         <div className="dreamcards">
+        { isDone == false ?
           <section onClick={() => setShowAdd(true)} className="dreamcard">
             <h2>Add</h2>
           </section>
+          : "" }
+     <AddDream updateDreamData={updateDreamData}  categories={categories} onClose={() => setShowAdd(false)} show={showAdd} /> 
 
-          <AddDream updateDreamData={updateDreamData}  categories={categories} onClose={() => setShowAdd(false)} show={showAdd} />
+
 
 {show!==0
-?<DreamItem dreamData={show} setShow={setShow}/>
+?<DreamItem dreamData={show} setShow={setShow} updateFunc={getDreamList}/>
 :""
 }
           
             {dreamData
-              .filter((dream) => id !== dream.id)
+                 .filter((dream) => dream.isDone == isDone)
+
+            //   .filter((dream) => id !== dream.id)
               .map((dream) => (
-                // <Link
-                //   to={`/dreams/${dream.id}`}
-                //   key={dream.id}
-                //   onClose={() => setShow(false)}
-                //   show={show}
-                // >
                 <section onClick={() => setShow(dream)} className="dreamcard">
                  <img
                     src={dream.image}
