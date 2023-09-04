@@ -89,8 +89,6 @@ const DreamPage = () => {
           
             {dreamData
                  .filter((dream) => dream.isDone == isDone)
-
-            //   .filter((dream) => id !== dream.id)
               .map((dream) => (
                 <section onClick={() => setShow(dream)} className="dreamcard">
                  <img
@@ -100,7 +98,6 @@ const DreamPage = () => {
                   />
                   <h2>{dream.dream_name}</h2>
                   </section>
-                /* </Link> */
               ))}
 
         </div>
