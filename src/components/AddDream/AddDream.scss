@@ -19,6 +19,7 @@
     .adddream__main {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
     height: 600px;
     width: 500px; 
@@ -40,6 +41,34 @@
     // }
     &-input {
         height: 2rem;
+    }
+    &-inputdescri {
+        height: 5rem;
+    }
+    &-search {
+        height: 2rem;
+        width: 5rem;
+        border: solid 1px;
+        border-radius: 7px;
+    }
+    &-title, &-description{
+        display: flex;
+        flex-direction: column; 
+    }
+    &-cat {
+        height: 2rem;
+    }
+    &-btnadd {
+       margin-top: auto; 
+       display: flex;
+       justify-content: center;
+    }
+    &-add {
+        height: 2.5rem;
+        width: 10rem;
+        border: solid 1px;
+        border-radius: 7px; 
+        
     }
     }
 

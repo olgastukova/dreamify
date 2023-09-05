@@ -64,22 +64,24 @@ const AddDream = ({updateDreamData, categories, onClose, show, updateFunc}) => {
           value={image}
           onChange={(e) => setImage(e.target.value)}
         />
-        <button onClick={searchImage}>search</button>
+        <button className="adddream__main-search" onClick={searchImage}>search</button>
 
         <form className="adddream__main-title">
-          <label>Name</label>
+          <label className="adddream__main-label">Name</label>
           <input
+          className="adddream__main-input"
             type="text"
             name="name"
             value={dreamName}
             onChange={(e) => setDreamName(e.target.value)}
           />
         </form>
-        <form className="adddream__main-title">
+        <form className="adddream__main-description">
           <label>Description</label>
           <input
+          className="adddream__main-inputdescri"
             type="text"
-            name="name"
+            name="description"
             value={dreamDesc}
             onChange={(e) => setDreamDesc(e.target.value)}
           />
@@ -104,8 +106,8 @@ const AddDream = ({updateDreamData, categories, onClose, show, updateFunc}) => {
           </select>
         
 
-        <div className="adddream__buttons">
-          <button onClick={saveDream}> Add a dream</button>
+        <div className="adddream__main-btnadd">
+          <button className="adddream__main-add"onClick={saveDream}> Add a dream</button>
         </div>
       </div>
     </section>
