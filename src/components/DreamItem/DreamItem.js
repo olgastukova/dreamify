@@ -1,10 +1,10 @@
 import './DreamItem.scss'
 import axios from 'axios';
 import React from 'react';
-import crossicon from '../../assets/icons/cross icon.jpg'
+import crossicon from '../../assets/icons/crossicon.png'
 import {ChatBot} from '../ChatBot/ChatBot';
 import { useState } from 'react';
-// import { Link } from 'react-router-dom';
+
 
 export const DreamItem = ({dreamData, setShow, updateFunc}) => {
 
@@ -60,9 +60,8 @@ function deleteDream(id) {
     </div>
  :
 <div className={`dreamitem__main ${ai ? 'show' : 'hide'}`} onClick={e => e.stopPropagation()}>
+    <button className="dreamitem__main-chatbot" onClick={()=>setAi(false)}>Back to dream</button>
      <ChatBot dreamData={dreamData}/>
-     <button onClick={()=>setAi(false)}>Back to dream</button>
-
 </div>
 }
         </section>

@@ -4,16 +4,26 @@ ul {
     list-style: none;
    
 }
-.logo {
-    display: flex;
+a {
+    margin: 0;
+}
+.logo__sect {
+   display: flex;
     justify-content: flex-start;
-    margin-left: 5rem;
+    margin-left: 4rem; 
+}
+.logo {
+    height: 4rem;
+    margin: 1rem 0 0 0;
 }
 .nav {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    
+    margin-top: -2rem;
+    &__todo:active {
+        border-bottom: 1px solid;
+    }
 }
 .categories {
     display: flex;
@@ -28,7 +38,14 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1.4rem 1.2rem;
+    padding: 1.4rem 1.2rem 0.5rem 1.2rem;
+
+    &--add {
+        display: flex;
+       justify-content: center;
+       font-family: "Kalam";
+       font-weight: 400;
+    }
 
     &__image {
         height: 85%;
@@ -38,16 +55,19 @@ ul {
         
     }
     &__name{
-        margin: 0;
+        margin: 0.5rem 0 0 0;
+        font-family: "Kalam";
+        font-weight: 400;
+        font-size: 1.2rem;
     }
 }
 main {
-    margin: 5rem;
+    margin: 4rem;
 }
 
 .dreamcards {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
 }
 .header {

@@ -1,78 +1,95 @@
-.adddream {
-    display: flex;
-   align-items: center;
-   justify-content: center;
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-    background-color: rgba(255, 255, 255, 0.7);
-    transition: all 0.3s ease-in-out;
-    pointer-events: none;
-    &.show {
-        opacity: 1;
-        pointer-events: visible;
+    .adddream {
+        display: flex;
+    align-items: center;
+    justify-content: center;
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0.7);
+        transition: all 0.3s ease-in-out;
+        pointer-events: none;
+        
+        &.show {
+            opacity: 1;
+            pointer-events: visible;
+        }
     }
-}
-    .adddream__main {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
-    height: 600px;
-    width: 500px; 
-    background-color: white;
-    border-radius: 3px;
-    padding: 1.8rem 1.2rem;
-    // background-image: url(../../assets/paris.jpg);
-    // background-size: 100% 50%;
-    // background-repeat: no-repeat;
-   
-    &-cross {
-        height: 1rem;
-    }
-    // &-button {
-    //     position: relative;
-    //     left: 27rem;
-    //     bottom: 17rem;
-    //     width: 3rem;
-    // }
+        .adddream__main {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+        height: 600px;
+        width: 500px; 
+        background-color: white;
+        border-radius: 3px;
+        padding: 1.8rem 1.2rem;
+        overflow-y: scroll;
+        &-cross {
+            height: 0.7rem;
+        }
+        &-button {
+            position: relative;
+            left: 29rem;
+            bottom: 1rem;
+            width: 3rem;
+        }
     &-input {
         height: 2rem;
+        border: solid 2px #0c6575;
+        border-radius: 5px;
+        // &:active {
+        //     border: solid 2px #e7840d;
+        // }
     }
     &-inputdescri {
         height: 5rem;
+        border: solid 2px #0c6575;
+        border-radius: 5px;
     }
     &-search {
-        height: 2rem;
-        width: 5rem;
-        border: solid 1px;
-        border-radius: 7px;
+        min-height: 2.5rem;
+        width: 100%;
+        border: solid 1px #0c6575;
+        background-color: #0c6575;
+        border-radius: 5px;
+        color: white;
     }
     &-title, &-description{
         display: flex;
         flex-direction: column; 
     }
+    
     &-cat {
-        height: 2rem;
+        min-height: 2rem;
+        border: solid 2px #0c6575;
+        border-radius: 5px;
     }
     &-btnadd {
        margin-top: auto; 
        display: flex;
        justify-content: center;
+
     }
     &-add {
         height: 2.5rem;
-        width: 10rem;
+        width: 100%;
         border: solid 1px;
-        border-radius: 7px; 
-        
+        border-radius: 5px; 
+          border: solid 1px #0c6575;
+        background-color: #0c6575;
+        border-radius: 5px;
+        color: white;
     }
     }
 
 button {
     border: none;
     background-color: transparent;
+}
+.img {
+    max-height: 7rem;
 }

@@ -1,6 +1,5 @@
 
 import React from 'react';
-import crossicon from '../../assets/icons/cross icon.jpg'
 import { useState } from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
@@ -11,7 +10,6 @@ const ChatBot = ({dreamData}) => {
 const [answer, setAnswer] = useState(undefined);
 
 const askAi = (e) => {
-    // e.preventDefault();
 
     axios
       .post("http://localhost:8080/ask", {
@@ -24,21 +22,18 @@ const askAi = (e) => {
         console.log(error);
       });
   }
-//   let needToLoad = true;
+
   useEffect(() => {
-    // if (needToLoad) {
-    //     needToLoad = false;
         askAi();
     }
  , []);
     return (
-<section>
+<section className="chatbot">
 <div className="chatbot__wrapper">
           <div> 
             <output className="chatbot__answer">{answer}</output>
-            
           </div>
-          {/* <button onClick={askAi}>Search</button> */}
+         
         </div>
 </section>
     )

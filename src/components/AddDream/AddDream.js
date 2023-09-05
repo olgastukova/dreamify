@@ -1,6 +1,6 @@
 import "./AddDream.scss";
 import React from "react";
-import crossicon from "../../assets/icons/cross icon.jpg";
+import crossicon from '../../assets/icons/crossicon.png'
 import { useState } from "react";
 import axios from "axios";
 import props from "../../pages/DreamPage/DreamPage.js"
@@ -52,7 +52,7 @@ const AddDream = ({updateDreamData, categories, onClose, show, updateFunc}) => {
         }}
       > 
         <button className="adddream__main-button"> 
-          <img className="adddream__main-cross" src={crossicon} alt="white x" />
+          <img className="adddream__main-cross" src={crossicon} alt="black x" onClick={onClose} />
         </button>
 
         {imageResponse ? <img src={imageResponse} /> : ""}
@@ -64,7 +64,7 @@ const AddDream = ({updateDreamData, categories, onClose, show, updateFunc}) => {
           value={image}
           onChange={(e) => setImage(e.target.value)}
         />
-        <button className="adddream__main-search" onClick={searchImage}>search</button>
+        <button className="adddream__main-search" onClick={searchImage}>Search</button>
 
         <form className="adddream__main-title">
           <label className="adddream__main-label">Name</label>

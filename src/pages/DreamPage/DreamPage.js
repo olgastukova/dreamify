@@ -6,6 +6,7 @@ import AddDream from "../../components/AddDream/AddDream";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import logo from "../../assets/images/logo (1).png"
 
 const DreamPage = () => {
   const [show, setShow] = useState(0);
@@ -50,19 +51,18 @@ const DreamPage = () => {
   return (
     <section>
       <header>
-        <Link to="/" className="logo">Dreamify</Link>
+        <Link to="/" className="logo__sect">
+            <img className="logo" src={logo} />
+        </Link>
         <div>
           <ul className="nav">
-            <li onClick={() => {setIsDone(false)}}>To Do</li>
-            <li onClick={() => {setIsDone(true)}}>Done</li>
+            <li className="nav__todo" onClick={() => {setIsDone(false)}}>To Do</li>
+            <li className="nav__done" onClick={() => {setIsDone(true)}}>Done</li>
           </ul>
         </div>
         <div>
           <ul className="categories">
             <li>all dreams</li>
-            {/* {categories?.map((category) => (
-                  <li key={category} >{category}</li>
-            ))} */}
             <li>travel</li>
             <li>experience</li>
             <li>relationships</li>
