@@ -1,3 +1,4 @@
+
 .dreamitem {
     display: flex;
    align-items: center;
@@ -15,35 +16,51 @@
         opacity: 1;
         pointer-events: visible;
     }
+    &__buttons {
+        display: flex;
+        justify-content: center;
+        gap:2rem;
+        margin-top: auto;
+    }
+    &__button {
+        height: 2rem;
+        width: 5rem;
+        border: solid 1px;
+        border-radius: 7px;
+        
+      }
 }
     .dreamitem__main {
     display: flex;
     flex-direction: column;
-    border: solid 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
     height: 600px;
     width: 500px; 
     background-color: white;
-    border-radius: 3px;
-  
-    // background-image: url(../../assets/paris.jpg);
-    // background-size: 100% 50%;
-    // background-repeat: no-repeat;
+    border-radius: 4px;
+    padding: 1.8rem 1.2rem;
     &-image {
         height: 50%;
-        width: 100%;
+        object-fit: cover;
+        border-radius: 1px;
+        // margin: 1.6rem 0.9rem 0 0.9rem;
     } 
     &-cross {
         height: 1rem;
     }
     &-button {
         position: relative;
-        left: 27rem;
+        left: 20rem;
         bottom: 17rem;
         width: 3rem;
     }
+    &-title {
+        margin: 0;
+    }
+   
     }
 
 button {
     border: none;
-    background-color: transparent;
+    background-color: transparent;  
 }

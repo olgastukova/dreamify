@@ -7,8 +7,8 @@
     top: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.7);
     opacity: 0;
+    background-color: rgba(255, 255, 255, 0.7);
     transition: all 0.3s ease-in-out;
     pointer-events: none;
     &.show {
@@ -19,12 +19,12 @@
     .adddream__main {
     display: flex;
     flex-direction: column;
-    border: solid 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
     height: 600px;
     width: 500px; 
-    background-color: rgb(169, 196, 221);
+    background-color: white;
     border-radius: 3px;
-  
+    padding: 1.8rem 1.2rem;
     // background-image: url(../../assets/paris.jpg);
     // background-size: 100% 50%;
     // background-repeat: no-repeat;
@@ -38,6 +38,9 @@
     //     bottom: 17rem;
     //     width: 3rem;
     // }
+    &-input {
+        height: 2rem;
+    }
     }
 
 button {

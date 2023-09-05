@@ -4,12 +4,13 @@ import guitar from '../../assets/guitar.jpg'
 import letter from '../../assets/letter.jpg'
 import meditate from '../../assets/meditate.jpg'
 import dog from '../../assets/dog.jpg'
+import { Link } from 'react-router-dom'
 
 const HomePage = () => {
     return (
         <section className="homepage">
             <header>
-                <h1 className="logo">Dreamify</h1>
+                <Link to="/dreams" className="logo">Dreamify</Link>
                 <div>
                 <ul className ="nav">
                     <li>My dreams</li>
