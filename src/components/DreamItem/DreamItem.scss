@@ -16,21 +16,32 @@
         opacity: 1;
         pointer-events: visible;
     }
-    &__buttons {
+
+&__buttons {
+    display: flex;
+    justify-content: center;
+    gap:1rem;
+    margin-top: auto;
+    &-sect {
         display: flex;
-        justify-content: center;
-        gap:1rem;
-        margin-top: auto;
+        width: 65%;
+        gap: 1rem;
     }
-    &__button {
-        height: 2.5rem;
-        width: 33%;
-        border: solid 1px #0c6575;
-        background-color: #0c6575;
-        border-radius: 5px;
-        color: white;
-        
-      }
+}
+&__button {
+    height: 2.5rem;
+    width: 33%;
+    border: solid 1px #0c6575;
+    background-color: #0c6575;
+    border-radius: 5px;
+    color: white;
+    &--done, &--fulf {
+        width: 50%;
+    }
+    &--dlt {
+        width: 100%;
+    }
+  }
 }
     .dreamitem__main {
     display: flex;
