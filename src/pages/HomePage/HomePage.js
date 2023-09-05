@@ -1,9 +1,9 @@
 import './HomePage.scss'
-import paris from '../../assets/paris.jpg'
-import guitar from '../../assets/guitar.jpg'
-import letter from '../../assets/letter.jpg'
-import meditate from '../../assets/meditate.jpg'
-import dog from '../../assets/dog.jpg'
+import paris from '../../assets/images/paris.jpg'
+import guitar from '../../assets/images/guitar.jpg'
+import letter from '../../assets/images/letter.jpg'
+import meditate from '../../assets/imagesmeditate.jpg'
+import dog from '../../assets/images/dog.jpg'
 import { Link } from 'react-router-dom'
 
 const HomePage = () => {
