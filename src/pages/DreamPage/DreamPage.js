@@ -1,15 +1,11 @@
 import "./DreamPage.scss";
-// import paris from "../../assets/paris.jpg";
-import guitar from "../../assets/guitar.jpg";
-import letter from "../../assets/letter.jpg";
-import meditate from "../../assets/meditate.jpg";
-import dog from "../../assets/dog.jpg";
 import { DreamItem } from "../../components/DreamItem/DreamItem";
 import React from "react";
 import { useState, useEffect} from "react";
 import AddDream from "../../components/AddDream/AddDream";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const DreamPage = () => {
   const [show, setShow] = useState(0);
@@ -18,12 +14,16 @@ const DreamPage = () => {
   const { id } = useParams();
   const [isDone, setIsDone] = useState(false);
 
+  function compare(dream1, dream2) {
+    return dream2.id- dream1.id;
+ }
+
   const getDreamList = () => {
     axios
       .get(`http://localhost:8080/dreams`)
       .then((response) => {
         console.log(response);
-        setDreamData(response.data);
+        setDreamData(response.data.sort(compare));
       })
       .catch((error) => {
         console.log(error);
@@ -50,7 +50,7 @@ const DreamPage = () => {
   return (
     <section>
       <header>
-        <h1 className="logo">Dreamify</h1>
+        <Link to="/" className="logo">Dreamify</Link>
         <div>
           <ul className="nav">
             <li onClick={() => {setIsDone(false)}}>To Do</li>
@@ -60,22 +60,25 @@ const DreamPage = () => {
         <div>
           <ul className="categories">
             <li>all dreams</li>
-            {categories?.map((category) => (
+            {/* {categories?.map((category) => (
                   <li key={category} >{category}</li>
-            ))}
+            ))} */}
+            <li>travel</li>
             <li>experience</li>
-            <li>things</li>
-            <li>relations</li>
-            <li>new skill</li>
-            <li>culture</li>
+            <li>relationships</li>
+            <li>new skills</li>
+            <li>life goals</li>
+            <li>career</li>
+            <li>sport</li>
+            <li>shopping</li>
           </ul>
         </div>
       </header>
       <main>
         <div className="dreamcards">
         { isDone == false ?
-          <section onClick={() => setShowAdd(true)} className="dreamcard">
-            <h2>Add</h2>
+          <section onClick={() => setShowAdd(true)} className="dreamcard dreamcard--add">
+            <h2>Add a dream</h2>
           </section>
           : "" }
      <AddDream updateDreamData={updateDreamData}  categories={categories} onClose={() => setShowAdd(false)} show={showAdd} /> 
@@ -96,7 +99,7 @@ const DreamPage = () => {
                     className="dreamcard__image"
                     alt="eifell tower"
                   />
-                  <h2>{dream.dream_name}</h2>
+                  <h2 className="dreamcard__name">{dream.dream_name}</h2>
                   </section>
               ))}
 

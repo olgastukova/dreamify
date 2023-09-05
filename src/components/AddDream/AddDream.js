@@ -11,15 +11,13 @@ const AddDream = ({updateDreamData, categories, onClose, show, updateFunc}) => {
   const [image, setImage] = useState("");
   const [imageResponse, setImageResponse] = useState("");
   const [category, setCategory] = useState("");
-//   const [showAdd, setShowAdd] = useState(false);
-//   const [addDreamData, setAddDreamData] = useState([]);
 
   const searchImage = () => {
     axios(
       `https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=${image}`
     ).then((res) => {
-      setImageResponse(res.data.urls.regular);
-      console.log(res.data.urls.regular);
+      setImageResponse(res.data.urls.small);
+      console.log(res.data.urls.small);
     });
   };
 
@@ -60,6 +58,7 @@ const AddDream = ({updateDreamData, categories, onClose, show, updateFunc}) => {
         {imageResponse ? <img src={imageResponse} /> : ""}
 
         <input
+        className="adddream__main-input"
           type="text"
           placeholder="Search image"
           value={image}
@@ -89,16 +88,17 @@ const AddDream = ({updateDreamData, categories, onClose, show, updateFunc}) => {
           className="adddream__main-cat"
           value={category}
           onChange={(e) => setCategory(e.target.value)}>
-             <option disabled value="">Please select</option>
+             <option disabled value="">Select a category</option>
                 {/* {categories?.map((category) => (
                   <option key={category} >{category}</option>
                 ))} */}
                 <option>all dreams</option>
                 <option>travel</option>
+                <option>experience</option>
                 <option>relationships</option>
                 <option>new skills</option>
-                <option>experience</option>
                 <option>life goals</option>
+                <option>career</option>
                 <option>sport</option>
                 <option>shopping</option>
           </select>

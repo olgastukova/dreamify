@@ -41,18 +41,18 @@ function deleteDream(id) {
           <section className={`dreamitem ${show ? 'show' : 'show'}`} onClick={onClose}>
 {ai == false ?
     <div className={`dreamitem__main ${!ai ? 'show' : 'invsible'}`} onClick={e => e.stopPropagation()}>
-       <img src={dreamData.image} className="dreamitem__main-image" alt="random image" />
+       <img src={dreamData.image} className="dreamitem__main-image" alt="random" />
     <button className="dreamitem__main-button" onClick={onClose}>
         <img className="dreamitem__main-cross" src={crossicon} alt="white x" />
     </button>
     <h2 className="dreamitem__main-title">{dreamData.dream_name}</h2>
+    <p className="dreamitem__main-category">#{dreamData.category}</p> 
     <p className="dreamitem__main-subtitle">{dreamData.description}</p>
-    <p>Category</p> 
     <div className="dreamitem__buttons">
-        <button onClick={() => {markDone(dreamData)}}>Done</button>
-        <button onClick={()=>setAi(true)}>Fulfill</button>
+        <button className="dreamitem__button" onClick={() => {markDone(dreamData)}}>Done</button>
+        <button className="dreamitem__button" onClick={()=>setAi(true)}>Fulfill</button>
         
-        <button onClick={()=>
+        <button className="dreamitem__button" onClick={()=>
         {deleteDream(dreamData.id)
         }}>Delete</button>
     </div>
