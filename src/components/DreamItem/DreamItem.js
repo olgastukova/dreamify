@@ -49,10 +49,13 @@ function deleteDream(id) {
     <p className="dreamitem__main-category">#{dreamData.category}</p> 
     <p className="dreamitem__main-subtitle">{dreamData.description}</p>
     <div className="dreamitem__buttons">
-        <button className="dreamitem__button" onClick={() => {markDone(dreamData)}}>Done</button>
-        <button className="dreamitem__button" onClick={()=>setAi(true)}>Fulfill</button>
-        
-        <button className="dreamitem__button" onClick={()=>
+    { dreamData.isDone == false ?
+    <section className="dreamitem__buttons-sect">
+        <button className="dreamitem__button dreamitem__button--done" onClick={() => {markDone(dreamData)}}>Done</button>
+        <button className="dreamitem__button dreamitem__button--fulf" onClick={()=>setAi(true)}>Fulfill</button>
+    </section>
+        : "" }
+        <button className="dreamitem__button dreamitem__button--dlt" onClick={()=>
         {deleteDream(dreamData.id)
         }}>Delete</button>
     </div>
