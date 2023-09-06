@@ -5,15 +5,20 @@ import letter from '../../assets/images/letter.jpg'
 import meditate from '../../assets/images/meditate.jpg'
 import dog from '../../assets/images/dog.jpg'
 import { Link } from 'react-router-dom'
+import logo from "../../assets/images/logo (1).png"
 
 const HomePage = () => {
     return (
         <section className="homepage">
             <header>
-                <Link to="/dreams" className="logo">Dreamify</Link>
+            <Link to="/dreams" className="logo__sect">
+            <img className="logo" src={logo} />
+        </Link>
                 <div>
                 <ul className ="nav">
+                <Link to="/dreams">
                     <li>My dreams</li>
+                    </Link> 
                     <li>Inspiration</li>
                     <li>Friends' dreams</li>
                 </ul>

@@ -3,7 +3,7 @@ import React from "react";
 import crossicon from '../../assets/icons/crossicon.png'
 import { useState } from "react";
 import axios from "axios";
-import props from "../../pages/DreamPage/DreamPage.js"
+
 
 const AddDream = ({updateDreamData, categories, onClose, show, updateFunc}) => {
   const [dreamName, setDreamName] = useState("");
@@ -43,7 +43,14 @@ const AddDream = ({updateDreamData, categories, onClose, show, updateFunc}) => {
   return (
     <section
       className={`adddream ${show ? "show" : ""}`}
-      onClick={onClose}
+      onClick={()=>{
+        setDreamName('')
+        setDreamDesc('')
+        setCategory ('')
+        setImage ('')
+        setImageResponse ('')
+        onClose()
+    }}
     >
       <div
         className="adddream__main"
@@ -94,7 +101,6 @@ const AddDream = ({updateDreamData, categories, onClose, show, updateFunc}) => {
                 {/* {categories?.map((category) => (
                   <option key={category} >{category}</option>
                 ))} */}
-                <option>all dreams</option>
                 <option>travel</option>
                 <option>experience</option>
                 <option>relationships</option>
