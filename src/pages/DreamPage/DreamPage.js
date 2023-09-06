@@ -14,6 +14,7 @@ const DreamPage = () => {
   const [dreamData, setDreamData] = useState([]);
   const { id } = useParams();
   const [isDone, setIsDone] = useState(false);
+  const [filteredCategory, filterCategory] = useState('all');
 
   function compare(dream1, dream2) {
     return dream2.id - dream1.id;
@@ -76,7 +77,7 @@ const DreamPage = () => {
         </div>
         <div>
           <ul className="categories">
-            <li>all dreams</li>
+            <li> all dreams</li>
            {categories?.map((category) => (
                   <option key={category} >{category}</option>
                 ))}
@@ -86,6 +87,7 @@ const DreamPage = () => {
       <main>
         <div className="dreamcards">
           {isDone == false ? (
+
             <section
               onClick={() => setShowAdd(true)}
               className="dreamcard dreamcard--add"

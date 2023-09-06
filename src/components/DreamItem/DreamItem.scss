@@ -51,7 +51,7 @@
     width: 500px; 
     background-color: white;
     border-radius: 4px;
-    padding: 1.8rem 1.2rem;
+    padding: 1.2rem 1.2rem 1.8rem 1.2rem;
     &-image {
         height: 50%;
         object-fit: cover;
@@ -61,12 +61,19 @@
     &-cross {
         height: 0.7rem;
     }
-    &-button {
-        position: relative;
-        left: 30rem;
-        bottom: 20rem;
-        width: 3rem;
+    &-icons {
+        display: flex;
+        justify-content: space-between;
     }
+    &-edit {
+        height:1rem;
+    }
+    // &-button {
+    //     position: relative;
+    //     left: 30rem;
+    //     bottom: 20rem;
+    //     width: 3rem;
+    // }
     &-title {
         margin: 0;
     
