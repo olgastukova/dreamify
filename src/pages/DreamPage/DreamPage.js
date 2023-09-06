@@ -6,7 +6,7 @@ import AddDream from "../../components/AddDream/AddDream";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/logo (1).png";
+import logo from "../../assets/images/logo7.png";
 
 const DreamPage = () => {
   const [show, setShow] = useState(0);

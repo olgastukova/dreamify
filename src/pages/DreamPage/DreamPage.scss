@@ -10,12 +10,12 @@ a {
 .logo__sect {
    display: flex;
     justify-content: flex-start;
-    margin-left: 7rem; 
+    margin-left: 5rem; 
     margin-top: 1rem;
     width: 10rem;
 }
 .logo {
-    height: 4rem;
+    height: 4.5rem;
     margin: 1rem 0 0 0;
 }
 .nav {
@@ -26,7 +26,7 @@ a {
     &__todo{
         border-bottom: none;
        &--active {
-        border-bottom: 3px solid #f89603;
+        border-bottom: 3px solid #40958e;
     }  
    
     // &__active, &__pending {
@@ -42,7 +42,7 @@ a {
    
     &__done {
   &--active {
-        border-bottom: 3px solid #f89603;
+        border-bottom: 3px solid #40958e;
     }
      &--inactive {
         border-bottom: none;

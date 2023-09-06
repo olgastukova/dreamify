@@ -90,7 +90,7 @@ function editDream(dreamData) {
                   className="dreamitem__button dreamitem__button--fulf"
                   onClick={() => setAi(true)}
                 >
-                  Fulfill
+                  Dreamify
                 </button>
               </section>
             ) : (

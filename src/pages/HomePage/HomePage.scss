@@ -18,15 +18,39 @@
     gap: 2rem;
 }
 .homecard {
-    height: 10rem;
-    width: 7rem;
-    border: 1px solid;
+    height:13rem;
+    width: 6rem;
     border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.4rem 1.2rem 0.5rem 1.2rem;
+    
+        // left: 0%;
+        // top: 0%;
+        
+      
     &__image {
-        height: 100%;
-        width: 100%;
-        object-fit: fill;
+        height: 85%;
+        max-width: 100%;
+        object-fit: cover;
     }
+    &__name{
+        margin: 0.7rem 0 0 0;
+        font-family: "Kalam";
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.3rem;
+    }
+}
+.homecards__track {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  width: 10rem;
+  height: 100vh;
+  animation: 3s linear infinite;
 }
 .homepage__main {
     margin: 0 5rem;
@@ -40,9 +64,34 @@
 }
 .homecards {
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
     align-items: flex-end;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     gap: 1rem;
-    height: 700px;
+   
+    // background: white;
+	// box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+	// margin: auto;
+	// overflow:hidden;
+	// position: relative;
+	
+	// &::before,
+	// &::after {
+	// 	content: "";
+	// 	height: 100px;
+	// 	position: absolute;
+	// 	width: 200px;
+	// 	z-index: 2;
+	// }
+	
+	// &::after {
+	// 	right: 0;
+	// 	top: 0;
+	// 	transform: rotateZ(180deg);
+	// }
+
+	// &::before {
+	// 	left: 0;
+	// 	top: 0;
+	// }
 }
