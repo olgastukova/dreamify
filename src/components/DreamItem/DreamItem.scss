@@ -38,9 +38,9 @@
     &--done, &--fulf {
         width: 50%;
     }
-    &--dlt {
-        width: 100%;
-    }
+    // &--dlt {
+    //     width: 100%;
+    // }
   }
 }
     .dreamitem__main {
@@ -69,6 +69,7 @@
     }
     &-title {
         margin: 0;
+    
     }
    &-chatbot{
     height: 2.5rem;

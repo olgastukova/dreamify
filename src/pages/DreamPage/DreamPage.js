@@ -1,12 +1,12 @@
 import "./DreamPage.scss";
 import { DreamItem } from "../../components/DreamItem/DreamItem";
 import React from "react";
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import AddDream from "../../components/AddDream/AddDream";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/logo (1).png"
+import logo from "../../assets/images/logo (1).png";
 
 const DreamPage = () => {
   const [show, setShow] = useState(0);
@@ -16,8 +16,8 @@ const DreamPage = () => {
   const [isDone, setIsDone] = useState(false);
 
   function compare(dream1, dream2) {
-    return dream2.id- dream1.id;
- }
+    return dream2.id - dream1.id;
+  }
 
   const getDreamList = () => {
     axios
@@ -37,14 +37,14 @@ const DreamPage = () => {
   const categoryList = (arr) => {
     let newArr = [];
     let uniqueArr = [];
-    arr?.map(dream => newArr.push(dream.category))
-    newArr.forEach(item => {
+    arr?.map((dream) => newArr.push(dream.category));
+    newArr.forEach((item) => {
       if (!uniqueArr.includes(item)) uniqueArr.push(item);
-    })
-    return uniqueArr
-  }
+    });
+    return uniqueArr;
+  };
   const categories = categoryList(dreamData);
-  
+
   const updateDreamData = (newDream) => {
     setDreamData(newDream);
   };
@@ -52,57 +52,78 @@ const DreamPage = () => {
     <section>
       <header>
         <Link to="/" className="logo__sect">
-            <img className="logo" src={logo} />
+          <img className="logo" src={logo} />
         </Link>
         <div>
           <ul className="nav">
-            <li className="nav__todo" onClick={() => {setIsDone(false)}}>To Do</li>
-            <li className="nav__done" onClick={() => {setIsDone(true)}}>Done</li>
+            <li
+              className={`${!isDone  ? 'nav__todo--active' : '' }` }
+              onClick={() => {
+                setIsDone(false);
+              }}
+            >
+              To Do
+            </li>
+            <li
+              className={isDone ? "nav__done--active" : ""}
+              onClick={() => {
+                setIsDone(true);
+              }}
+            >
+              Done
+            </li>
           </ul>
         </div>
         <div>
           <ul className="categories">
             <li>all dreams</li>
-            <li>travel</li>
-            <li>experience</li>
-            <li>relationships</li>
-            <li>new skills</li>
-            <li>life goals</li>
-            <li>career</li>
-            <li>sport</li>
-            <li>shopping</li>
+           {categories?.map((category) => (
+                  <option key={category} >{category}</option>
+                ))}
           </ul>
         </div>
       </header>
       <main>
         <div className="dreamcards">
-        { isDone == false ?
-          <section onClick={() => setShowAdd(true)} className="dreamcard dreamcard--add">
-            <h2>Add a dream</h2>
-          </section>
-          : "" }
-     <AddDream updateDreamData={updateDreamData}  categories={categories} onClose={() => setShowAdd(false)} show={showAdd} /> 
+          {isDone == false ? (
+            <section
+              onClick={() => setShowAdd(true)}
+              className="dreamcard dreamcard--add"
+            >
+              <h2>Add a dream</h2>
+            </section>
+          ) : (
+            ""
+          )}
+          <AddDream
+            updateDreamData={updateDreamData}
+            categories={categories}
+            onClose={() => setShowAdd(false)}
+            show={showAdd}
+          />
 
+          {show !== 0 ? (
+            <DreamItem
+              dreamData={show}
+              setShow={setShow}
+              updateFunc={getDreamList}
+            />
+          ) : (
+            ""
+          )}
 
-
-{show!==0
-?<DreamItem dreamData={show} setShow={setShow} updateFunc={getDreamList}/>
-:""
-}
-          
-            {dreamData
-                 .filter((dream) => dream.isDone == isDone)
-              .map((dream) => (
-                <section onClick={() => setShow(dream)} className="dreamcard">
-                 <img
-                    src={dream.image}
-                    className="dreamcard__image"
-                    alt="eifell tower"
-                  />
-                  <h2 className="dreamcard__name">{dream.dream_name}</h2>
-                  </section>
-              ))}
-
+          {dreamData
+            .filter((dream) => dream.isDone == isDone)
+            .map((dream) => (
+              <section onClick={() => setShow(dream)} className="dreamcard">
+                <img
+                  src={dream.image}
+                  className="dreamcard__image"
+                  alt="eifell tower"
+                />
+                <h2 className="dreamcard__name">{dream.dream_name}</h2>
+              </section>
+            ))}
         </div>
       </main>
     </section>

@@ -43,7 +43,7 @@ function deleteDream(id) {
     <div className={`dreamitem__main ${!ai ? 'show' : 'invsible'}`} onClick={e => e.stopPropagation()}>
        <img src={dreamData.image} className="dreamitem__main-image" alt="random" />
     <button className="dreamitem__main-button" onClick={onClose}>
-        <img className="dreamitem__main-cross" src={crossicon} alt="white x" />
+        <img className="dreamitem__main-cross" src={crossicon} alt="black x" />
     </button>
     <h2 className="dreamitem__main-title">{dreamData.dream_name}</h2>
     <p className="dreamitem__main-category">#{dreamData.category}</p> 
