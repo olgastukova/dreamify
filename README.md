@@ -1,18 +1,15 @@
 # Dreamify
 
-## Description
+## Overview
 
-Dreamify is a platform where user can store his dreams, receive guidance on its realization and get inspiration. 
+This is a React application that allows users to store and manage a list of dreams. Users can add new dreams, mark them as completed, delete them, and get guidance on how to fulfill them using Chat GPT.
 
-### Problem
 
-Most people have dreams and aspirations but shelve them because it feels complicated and time-consuming to fulfill them. Meanwhile, lots of dreams can come true this year or even this week! Dreamify addresses this by combining dream-journaling and AI-powered assistance. It eliminates the frustration of not knowing where to start or how to proceed, making the pursuit of dreams more achievable and fulfilling.
-
-### Requirements: Use Cases and Features
+###Features
 
 #### Home Page
 
-- Users can see new dream ideas for inspiration.
+- Users can see new dream ideas for inspiration(future functionality).
 - Users can go to a dream List.
 
 #### Dream List
@@ -22,7 +19,7 @@ Most people have dreams and aspirations but shelve them because it feels complic
 
 #### Dream Window
 
-- Users can open any dream to change it, delete, mark as completed or call an AI assistant.
+- Users can open any dream to delete it, mark as completed or call an AI assistant.
 
 #### AI Dream Assistant
 
@@ -32,12 +29,14 @@ Most people have dreams and aspirations but shelve them because it feels complic
 #### Progress Tracking
 
 - Users can track their progress on dream fulfillment plans.
-- Milestones and achievements are recorded to motivate users.
+- Milestones and achievements are recorded to motivate users in a list "Done".
 
 ### Tech Stack and APIs
 
 - React.js, Sass, Express, JS
-- MySQL, GPT 3.5 turbo
+- MySQL
+- GPT 3.5 turbo 
+
 
 ## Client-Side Implementation
 
@@ -45,13 +44,20 @@ Most people have dreams and aspirations but shelve them because it feels complic
 
 #### Home
 
-- Dream List
+- Dream Page
   - Show the list
+  - Show Done list
   - Add new items
   - Delete item
+- Add dream
+  - Search a picture
+  -  Add a name of dream
+  -  Add dream description
+  -  Choose dream category
 - Dream item
   - Use AI assistant
   -  Check items as done
+  
 
 ### Server-Side Implementation
 
@@ -120,8 +126,8 @@ Most people have dreams and aspirations but shelve them because it feels complic
 
 #### External APIs
 
-- ChatGPT 3.5 turbo
-- Unsplash API
+- GPT 3.5 turbo API https://platform.openai.com/docs/api-reference
+- Unsplash API for pictures https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query
 
 #### Database Structure
 One table with data. Used MySQL.
@@ -129,36 +135,46 @@ One table with data. Used MySQL.
 id | dream_name | isDone | description | category   | image                                                                                                                                                                 
 | 45 | Be a great software engineer |      1        | life goals | https://images.unsplash.com/photo-1605379399642-870262d3d051?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxNDI0NzB8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTM3ODQ2NDJ8&ixlib=rb-4.0.
 
+## Usage
 
+1. Clone the repository:
 
-## Project Roadmap
+```bash
+Front-end:
+git clone https://github.com/olgastukova/dreamify
 
-### Phase 1
+For Back-end: https://github.com/olgastukova/dreamify
 
+2. Install dependencies:
+cd dreamify
+npm install
+npm i axios sass react-router-dom
 
-Goal
+For back-end: 
+cd dreamify-api
+npm install
+npm i knex openai
 
-1. Build React App overall structure and high-level components and design models
-2. Create database
-3. Define all Endpoints in express
-4. Implement functionality of endpoints - create JSON response and verify endpoint responses
-5. Hook up to database
-6. Connect endpoints to Chat GPT
-7. Connect smart components to end-point APIs
-8. Test/debug end-to-end functionality of app
-9. Implement CSS/Styling 
-10. Code Clean up, last minute testing/debugging
-11. DEMO DAY
+3. Start the application:
+npm start
 
-### Phase 2
+For back-end: node index.js
+
+##Contributing
+If you'd like to contribute to this project, please follow these steps:
+
+Fork the repository
+Create a new branch (git checkout -b feature/your-feature)
+Make your changes and commit them
+Push to the branch (git push origin feature/your-feature)
+Open a pull request
+
+##Next steps
 
 - Add categories.
 - Add details to a dream description (time, cost, location).
 - Add a user profile page.
 - Add authentication.
-
-### Phase 3
-
 - Make personalized dream suggestions using AI.
 - Add “Share’ function.
 - Add a functionality to check other users’ dream lists.
