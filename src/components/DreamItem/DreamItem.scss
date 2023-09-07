@@ -1,95 +1,86 @@
+@use "../../styles/partials/variables" as *;
 
 .dreamitem {
-    display: flex;
-   align-items: center;
-   justify-content: center;
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.7);
-    opacity: 0;
-    transition: all 0.3s ease-in-out;
-    pointer-events: none;
-    &.show {
-        opacity: 1;
-        pointer-events: visible;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+  &.show {
+    opacity: 1;
+    pointer-events: visible;
+  }
 
-&__buttons {
+  &__buttons {
     display: flex;
     justify-content: center;
-    gap:1rem;
+    gap: 1rem;
     margin-top: auto;
     &-sect {
-        display: flex;
-        width: 65%;
-        gap: 1rem;
+      display: flex;
+      width: 65%;
+      gap: 1rem;
     }
-}
-&__button {
+  }
+  &__button {
     height: 2.5rem;
     width: 33%;
-    border: solid 1px #0c6575;
-    background-color: #0c6575;
+    border: solid 1px $main;
+    background-color: $main;
     border-radius: 5px;
     color: white;
-    &--done, &--fulf {
-        width: 50%;
+    &--done,
+    &--fulf {
+      width: 50%;
     }
-    // &--dlt {
-    //     width: 100%;
-    // }
   }
 }
-    .dreamitem__main {
+.dreamitem__main {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  height: 600px;
+  width: 500px;
+  background-color: white;
+  border-radius: 4px;
+  padding: 1.2rem 1.2rem 1.8rem 1.2rem;
+  &-image {
+    height: 50%;
+    object-fit: cover;
+    border-radius: 1px;
+  }
+  &-cross {
+    height: 0.7rem;
+  }
+  &-icons {
     display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
-    height: 600px;
-    width: 500px; 
-    background-color: white;
-    border-radius: 4px;
-    padding: 1.2rem 1.2rem 1.8rem 1.2rem;
-    &-image {
-        height: 50%;
-        object-fit: cover;
-        border-radius: 1px;
-        // margin: 1.6rem 0.9rem 0 0.9rem;
-    } 
-    &-cross {
-        height: 0.7rem;
-    }
-    &-icons {
-        display: flex;
-        justify-content: space-between;
-    }
-    &-edit {
-        height:1rem;
-    }
-    // &-button {
-    //     position: relative;
-    //     left: 30rem;
-    //     bottom: 20rem;
-    //     width: 3rem;
-    // }
-    &-title {
-        margin: 0;
-    
-    }
-   &-chatbot{
+    justify-content: space-between;
+  }
+  &-edit {
+    height: 1rem;
+  }
+  &-title {
+    margin: 0;
+  }
+  &-chatbot {
     height: 2.5rem;
     width: 100%;
-    border: solid 1px #0c6575;
-    background-color: #0c6575;
+    border: solid 1px $main;
+    background-color: $main;
     border-radius: 5px;
     color: white;
     margin-bottom: 1rem;
-   }
-    }
+  }
+}
 
 button {
-    border: none;
-    background-color: transparent;  
+  border: none;
+  background-color: transparent;
 }

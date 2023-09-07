@@ -1,5 +1,5 @@
 import "./HomePage.scss";
-import paris from "../../assets/images/dog.jpg";
+import paris from "../../assets/images/paris.jpg";
 import guitar from "../../assets/images/guitar.jpg";
 import letter from "../../assets/images/letter.jpg";
 import meditate from "../../assets/images/meditate.jpg";
@@ -25,11 +25,214 @@ const HomePage = () => {
         </div>
       </header>
       <main className="homepage__main">
-        <div className="title">Dream. Get inspired. Fulfill</div>
+        <div className="title">Dream. Get inspired. Fulfill.</div>
         <div className="homecards">
+          <div className="homecards__track">
+            <section className="homecard">
+              <img src={letter} className="homecard__image" alt="eifell tower" />
+            </section>
+            <section className="homecard">
+              <img
+                src={guitar}
+                className="homecard__image"
+                alt="eifell tower"
+              />
+            </section>
+            <section className="homecard">
+              <img src={meditate} className="homecard__image" alt="eifell tower" />
+            </section>
+            <section className="homecard">
+              <img src={paris} className="homecard__image" alt="eifell tower" />
+            </section>
+            <section className="homecard">
+              <img
+                src={letter}
+                className="homecard__image"
+                alt="eifell tower"
+              />
+            </section>
+            <section className="homecard">
+              <img src={dog} className="homecard__image" alt="eifell tower" />
+            </section>
+            <section className="homecard">
+              <img src={letter} className="homecard__image" alt="eifell tower" />
+            </section>
+            <section className="homecard">
+              <img
+                src={guitar}
+                className="homecard__image"
+                alt="eifell tower"
+              />
+            </section>
+            <section className="homecard">
+              <img src={dog} className="homecard__image" alt="eifell tower" />
+            </section>
+            <section className="homecard">
+              <img src={meditate} className="homecard__image" alt="eifell tower" />
+            </section>
+            <section className="homecard">
+              <img
+                src={guitar}
+                className="homecard__image"
+                alt="eifell tower"
+              />
+            </section>
+            <section className="homecard">
+              <img src={letter} className="homecard__image" alt="eifell tower" />
+            </section>
+            <section className="homecard">
+              <img src={paris} className="homecard__image" alt="eifell tower" />
+            </section>
+            <section className="homecard">
+              <img
+                src={guitar}
+                className="homecard__image"
+                alt="eifell tower"
+              />
+            </section>
+            <section className="homecard">
+              <img src={meditate} className="homecard__image" alt="eifell tower" />
+            </section>
+            <section className="homecard">
+              <img src={paris} className="homecard__image" alt="eifell tower" />
+            </section>
+            <section className="homecard">
+              <img
+                src={guitar}
+                className="homecard__image"
+                alt="eifell tower"
+              />
+            </section>
+            <section className="homecard">
+              <img src={dog} className="homecard__image" alt="eifell tower" />
+            </section>
+            <section className="homecard">
+              <img src={paris} className="homecard__image" alt="eifell tower" />
+            </section>
+            <section className="homecard">
+              <img
+                src={guitar}
+                className="homecard__image"
+                alt="eifell tower"
+              />
+            </section>
+            <section className="homecard">
+              <img src={meditate} className="homecard__image" alt="eifell tower" />
+            </section>
+            <section className="homecard">
+              <img src={paris} className="homecard__image" alt="eifell tower" />
+            </section>
+            <section className="homecard">
+              <img
+                src={guitar}
+                className="homecard__image"
+                alt="eifell tower"
+              />
+            </section>
+            <section className="homecard">
+              <img src={letter} className="homecard__image" alt="eifell tower" />
+            </section>
+          </div>
+
+          <div className="homecards__track2">
+            <section className="homecard">
+              <img src={paris} className="homecard__image" alt="eifell tower" />
+            </section>
+            <section className="homecard">
+              <img
+                src={guitar}
+                className="homecard__image"
+                alt="eifell tower"
+              />
+            </section>
+            <section className="homecard">
+              <img src={dog} className="homecard__image" alt="eifell tower" />
+            </section>
+            <section className="homecard">
+              <img src={paris} className="homecard__image" alt="eifell tower" />
+            </section>
+            <section className="homecard">
+              <img
+                src={guitar}
+                className="homecard__image"
+                alt="eifell tower"
+              />
+            </section>
+            <section className="homecard">
+              <img src={dog} className="homecard__image" alt="dog" />
+            </section>
+            <section className="homecard">
+              <img src={paris} className="homecard__image" alt="eifell tower" />
+            </section>
+            <section className="homecard">
+              <img
+                src={letter}
+                className="homecard__image"
+                alt="eifell tower"
+              />
+            </section>
+            <section className="homecard">
+              <img src={dog} className="homecard__image" alt="eifell tower" />
+            </section>
+            <section className="homecard">
+              <img src={paris} className="homecard__image" alt="eifell tower" />
+            </section>
+            <section className="homecard">
+              <img
+                src={meditate}
+                className="homecard__image"
+                alt="eifell tower"
+              />
+            </section>
+            <section className="homecard">
+              <img src={dog} className="homecard__image" alt="eifell tower" />
+            </section>
+            <section className="homecard">
+              <img
+                src={guitar}
+                className="homecard__image"
+                alt="eifell tower"
+              />
+            </section>
+            <section className="homecard">
+              <img src={dog} className="homecard__image" alt="eifell tower" />
+            </section>
+            <section className="homecard">
+              <img src={paris} className="homecard__image" alt="eifell tower" />
+            </section>
+            <section className="homecard">
+              <img
+                src={guitar}
+                className="homecard__image"
+                alt="eifell tower"
+              />
+            </section>
+          </div>
 
           <div className="homecards__track">
-
+            <section className="homecard">
+              <img
+                src={meditate}
+                className="homecard__image"
+                alt="eifell tower"
+              />
+            </section>
+            <section className="homecard">
+              <img src={dog} className="homecard__image" alt="eifell tower" />
+            </section>
+            <section className="homecard">
+              <img src={letter} className="homecard__image" alt="eifell tower" />
+            </section>
+            <section className="homecard">
+              <img
+                src={guitar}
+                className="homecard__image"
+                alt="eifell tower"
+              />
+            </section>
+            <section className="homecard">
+              <img src={dog} className="homecard__image" alt="eifell tower" />
+            </section>
             <section className="homecard">
               <img src={paris} className="homecard__image" alt="eifell tower" />
             </section>
@@ -43,9 +246,12 @@ const HomePage = () => {
             <section className="homecard">
               <img src={dog} className="homecard__image" alt="eifell tower" />
             </section>
-          </div>
-
-          <div className="homecards__track" >
+            <section className="homecard">
+              <img src={paris} className="homecard__image" alt="eifell tower" />
+            </section>
+            <section className="homecard">
+              <img src={dog} className="homecard__image" alt="eifell tower" />
+            </section>
             <section className="homecard">
               <img src={paris} className="homecard__image" alt="eifell tower" />
             </section>
@@ -59,15 +265,12 @@ const HomePage = () => {
             <section className="homecard">
               <img src={dog} className="homecard__image" alt="eifell tower" />
             </section>
-          </div>
-
-          <div className="homecards__track" >
             <section className="homecard">
               <img src={paris} className="homecard__image" alt="eifell tower" />
             </section>
             <section className="homecard">
               <img
-                src={guitar}
+                src={meditate}
                 className="homecard__image"
                 alt="eifell tower"
               />
