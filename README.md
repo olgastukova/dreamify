@@ -1,70 +1,164 @@
-# Getting Started with Create React App
+# Dreamify
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+Dreamify is a platform where user can store his dreams, receive guidance on its realization and get inspiration. 
 
-In the project directory, you can run:
+### Problem
 
-### `npm start`
+Most people have dreams and aspirations but shelve them because it feels complicated and time-consuming to fulfill them. Meanwhile, lots of dreams can come true this year or even this week! Dreamify addresses this by combining dream-journaling and AI-powered assistance. It eliminates the frustration of not knowing where to start or how to proceed, making the pursuit of dreams more achievable and fulfilling.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Requirements: Use Cases and Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Home Page
 
-### `npm test`
+- Users can see new dream ideas for inspiration.
+- Users can go to a dream List.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Dream List
 
-### `npm run build`
+- Users can log their dreams with a description and pictures.
+- Users can change and delete dreams from the list or mark it as completed.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Dream Window
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Users can open any dream to change it, delete, mark as completed or call an AI assistant.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### AI Dream Assistant
 
-### `npm run eject`
+- An AI chatbot assists users in understanding and refining their dreams.
+- The chatbot provides actionable steps to achieve dream-related goals.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Progress Tracking
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Users can track their progress on dream fulfillment plans.
+- Milestones and achievements are recorded to motivate users.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Tech Stack and APIs
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- React.js, Sass, Express, JS
+- MySQL, GPT 3.5 turbo
 
-## Learn More
+## Client-Side Implementation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Site Map
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Home
 
-### Code Splitting
+- Dream List
+  - Show the list
+  - Add new items
+  - Delete item
+- Dream item
+  - Use AI assistant
+  -  Check items as done
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Server-Side Implementation
 
-### Analyzing the Bundle Size
+#### End-Point Descriptions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **HTTP GET  dream-item**
+  - Response Format
+    ```
+    { 
+      dream-item : [ 
+        { 
+          Name : ‘STRING’, 
+          done : TRUE/FALSE, 
+          ID : NUMBER, 
+          Description: ‘STRING’ 
+        }, 
+        Category: ‘STRING’
+      ] 
+    }
+    ```
+- **HTTP POST new dream-item**
+  - Response Format
+    ```
+    { 
+      new-dream-item : [ 
+        { 
+          Name : ‘STRING’, 
+          done : TRUE/FALSE, 
+          ID : NUMBER, 
+          Description: ‘STRING’ 
+        }, 
+        Category: ‘STRING’
+      ] 
+    }
+    ```
+- **HTTP PUT dream-item**
+  - Response Format
+    ```
+    { 
+      dream-item : [ 
+        { 
+          Name : ‘STRING’, 
+          done : TRUE/FALSE, 
+          ID : NUMBER, 
+          Description: ‘STRING’ 
+        }, 
+        Category: ‘STRING’
+      ] 
+    }
+    ```
+- **HTTP DELETE dream-item**
+  - Response Format
+    ```
+    { 
+      dream-item : [ 
+        { 
+          Name : ‘STRING’, 
+          done : TRUE/FALSE, 
+          ID : NUMBER, 
+          Description: ‘STRING’ 
+        }, 
+        Category: ‘STRING’
+      ] 
+    }
+    ```
 
-### Making a Progressive Web App
+#### External APIs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- ChatGPT 3.5 turbo
+- Unsplash API
 
-### Advanced Configuration
+#### Database Structure
+One table with data. Used MySQL.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+id | dream_name | isDone | description | category   | image                                                                                                                                                                 
+| 45 | Be a great software engineer |      1        | life goals | https://images.unsplash.com/photo-1605379399642-870262d3d051?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxNDI0NzB8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTM3ODQ2NDJ8&ixlib=rb-4.0.
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+## Project Roadmap
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Phase 1
+
+
+Goal
+
+1. Build React App overall structure and high-level components and design models
+2. Create database
+3. Define all Endpoints in express
+4. Implement functionality of endpoints - create JSON response and verify endpoint responses
+5. Hook up to database
+6. Connect endpoints to Chat GPT
+7. Connect smart components to end-point APIs
+8. Test/debug end-to-end functionality of app
+9. Implement CSS/Styling 
+10. Code Clean up, last minute testing/debugging
+11. DEMO DAY
+
+### Phase 2
+
+- Add categories.
+- Add details to a dream description (time, cost, location).
+- Add a user profile page.
+- Add authentication.
+
+### Phase 3
+
+- Make personalized dream suggestions using AI.
+- Add “Share’ function.
+- Add a functionality to check other users’ dream lists.
