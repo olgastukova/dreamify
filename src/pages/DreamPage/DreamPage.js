@@ -6,7 +6,7 @@ import AddDream from "../../components/AddDream/AddDream";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/logo (1).png";
+import logo from "../../assets/images/logo7.png";
 
 const DreamPage = () => {
   const [show, setShow] = useState(0);
@@ -14,7 +14,6 @@ const DreamPage = () => {
   const [dreamData, setDreamData] = useState([]);
   const { id } = useParams();
   const [isDone, setIsDone] = useState(false);
-  const [filteredCategory, filterCategory] = useState('all');
 
   function compare(dream1, dream2) {
     return dream2.id - dream1.id;
@@ -58,7 +57,7 @@ const DreamPage = () => {
         <div>
           <ul className="nav">
             <li
-              className={`${!isDone  ? 'nav__todo--active' : '' }` }
+              className={`${!isDone ? "nav__todo--active" : ""}`}
               onClick={() => {
                 setIsDone(false);
               }}
@@ -78,16 +77,15 @@ const DreamPage = () => {
         <div>
           <ul className="categories">
             <li> all dreams</li>
-           {categories?.map((category) => (
-                  <option key={category} >{category}</option>
-                ))}
+            {categories?.map((category) => (
+              <option key={category}>{category}</option>
+            ))}
           </ul>
         </div>
       </header>
       <main>
         <div className="dreamcards">
           {isDone == false ? (
-
             <section
               onClick={() => setShowAdd(true)}
               className="dreamcard dreamcard--add"

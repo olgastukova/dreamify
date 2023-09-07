@@ -1,4 +1,6 @@
-    .adddream {
+@use "../../styles/partials/variables" as *;
+   
+   .adddream {
         display: flex;
     align-items: center;
     justify-content: center;
@@ -39,22 +41,22 @@
         }
     &-input {
         height: 2rem;
-        border: solid 2px #128a98;
+        border: solid 2px $main;
         border-radius: 5px;
-        // &:active {
-        //     border: solid 2px #e7840d;
-        // }
+        &:focus {
+            border: solid 2px #e7840d;
+        }
     }
     &-inputdescri {
         height: 5rem;
-        border: solid 2px #409590;
+        border: solid 2px $main;
         border-radius: 5px;
     }
     &-search {
         min-height: 2.5rem;
-        width: 100%;
-        border: solid 1px #128a98;
-        background-color: #128a98;
+        width: 30%;
+        border: solid 1px $main;
+        background-color: $main;
         border-radius: 5px;
         color: white;
     }
@@ -65,7 +67,7 @@
     
     &-cat {
         min-height: 2rem;
-        border: solid 2px #0c6575;
+        border: solid 2px $main;
         border-radius: 5px;
     }
     &-btnadd {
@@ -79,8 +81,8 @@
         width: 100%;
         border: solid 1px;
         border-radius: 5px; 
-          border: solid 1px #0c6575;
-        background-color: #0c6575;
+          border: solid 1px $main;
+        background-color: $main;
         border-radius: 5px;
         color: white;
     }

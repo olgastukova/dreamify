@@ -8,15 +8,12 @@ import { useState } from "react";
 
 export const DreamItem = ({ dreamData, setShow, updateFunc }) => {
   const [ai, setAi] = useState(false);
-  const [edit, setIsEdit] = useState(false);
+
   const onClose = () => {
     setShow(0);
   };
   const show = true;
-  
-function editDream(dreamData) {
 
-}
   function markDone(dreamData) {
     dreamData.isDone = true;
     axios
@@ -45,33 +42,32 @@ function editDream(dreamData) {
       onClick={onClose}
     >
       {ai == false ? (
-        
         <div
           className={`dreamitem__main ${!ai ? "show" : "invsible"}`}
           onClick={(e) => e.stopPropagation()}
         >
-            <div className="dreamitem__main-icons">
+          <div className="dreamitem__main-icons">
             <button className="dreamitem__main-button">
-            <img
-              className="dreamitem__main-edit"
-              src={editicon}
-              alt="black pencil"
-            />
-          </button>
-                 <button className="dreamitem__main-button" onClick={onClose}>
-            <img
-              className="dreamitem__main-cross"
-              src={crossicon}
-              alt="black x"
-            />
-          </button>
-            </div>
+              <img
+                className="dreamitem__main-edit"
+                src={editicon}
+                alt="black pencil"
+              />
+            </button>
+            <button className="dreamitem__main-button" onClick={onClose}>
+              <img
+                className="dreamitem__main-cross"
+                src={crossicon}
+                alt="black x"
+              />
+            </button>
+          </div>
           <img
             src={dreamData.image}
             className="dreamitem__main-image"
             alt="random"
           />
-         
+
           <h2 className="dreamitem__main-title">{dreamData.dream_name}</h2>
           <p className="dreamitem__main-category">#{dreamData.category}</p>
           <p className="dreamitem__main-subtitle">{dreamData.description}</p>
@@ -90,7 +86,7 @@ function editDream(dreamData) {
                   className="dreamitem__button dreamitem__button--fulf"
                   onClick={() => setAi(true)}
                 >
-                  Fulfill
+                  Dreamify
                 </button>
               </section>
             ) : (
@@ -106,7 +102,6 @@ function editDream(dreamData) {
             </button>
           </div>
         </div>
-        
       ) : (
         <div
           className={`dreamitem__main ${ai ? "show" : "hide"}`}
