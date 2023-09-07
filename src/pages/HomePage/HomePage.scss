@@ -1,0 +1,88 @@
+a {
+  text-decoration: none;
+}
+.logo {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 5rem;
+  margin-bottom: 0;
+}
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: -3rem;
+}
+.homepage__main {
+    margin: 0 5rem;
+    display: flex;
+  }
+  .title {
+    width: 70%;
+    font-size: 3.5rem;
+    display: flex;
+    align-items: center;
+  }
+.homecard {
+  height: 13rem;
+  width: 6rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.4rem 1.2rem 0.5rem 1.2rem;
+
+  &__image {
+    height: 85%;
+    max-width: 100%;
+    object-fit: cover;
+  }
+  &__name {
+    margin: 0.7rem 0 0 0;
+    font-family: "Kalam";
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.3rem;
+  }
+}
+
+.homecards__track {
+  display: flex;
+  flex-direction: column;
+  width: 10rem;
+  position: relative;
+  animation: scroll 50s linear infinite;
+  @keyframes scroll {
+    from {
+      top: 100%;
+    }
+    to {
+      top: -10%;
+    }
+  }
+}
+
+.homecards__track2 {
+  display: flex;
+  flex-direction: column;
+  width: 10rem;
+  position: relative;
+  animation: primary 50s linear infinite;
+  @keyframes primary {
+    from {
+      bottom: 10%;
+    }
+    to {
+      bottom: -100%;
+    }
+  }
+}
+
+
+.homecards {
+  display: flex;
+  height: 50rem;
+  align-items: flex-end;
+  gap: 1rem;
+}
